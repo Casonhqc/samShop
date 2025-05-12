@@ -1,0 +1,487 @@
+/* Global Styles & Memphis Base */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #FFD166; /* Bright Yellow */
+    color: #073B4C; /* Dark Blue */
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 5px solid #06D6A0; /* Teal accent */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#wishlist-btn {
+    background-color: #EF476F; /* Pink/Red */
+    color: #fff;
+    border: 3px solid #073B4C;
+    padding: 0.7rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#wishlist-btn:hover {
+    background-color: #D6325B;
+    transform: translateY(-2px);
+}
+
+main {
+    padding: 1.5rem 2rem;
+}
+
+/* Filter Section - Memphis Style */
+#filter-section {
+    margin-bottom: 2.5rem;
+    padding: 1.5rem;
+    background-color: #fff;
+    border: 3px solid #073B4C;
+    border-radius: 8px;
+    position: relative;
+}
+
+#filter-section::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    width: 30px;
+    height: 30px;
+    background-color: #06D6A0;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    transform: rotate(-15deg);
+}
+
+#filter-section h2 {
+    margin-top: 0;
+    font-size: 1.6rem;
+    color: #073B4C;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+#energy-bean-filters button {
+    background-color: #118AB2;
+    color: white;
+    border: 2px solid #073B4C;
+    padding: 0.7rem 1.4rem;
+    margin-right: 0.7rem;
+    margin-bottom: 0.7rem;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#energy-bean-filters button:hover {
+    background-color: #0C6E8E;
+    transform: scale(1.05);
+}
+
+#energy-bean-filters button.active {
+    background-color: #073B4C;
+    color: #FFD166;
+    box-shadow: 0 0 0 3px #FFD166;
+}
+
+/* Product List Section */
+#product-list-section h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); /* Slightly wider cards for more image space */
+    gap: 2.5rem;
+}
+
+/* Product Card - Memphis Style */
+.product-card {
+    background-color: #fff;
+    border: 4px solid #073B4C;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 8px 8px 0px #06D6A0;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.product-card:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 12px 12px 0px #EF476F;
+}
+
+.product-card-image-container {
+    width: 100%;
+    height: 280px; /* Increased height for better image proportion */
+    margin-bottom: 1rem;
+    background-color: #e9ecef; /* Lighter placeholder bg */
+    border-radius: 6px;
+    overflow: hidden;
+    display: flex; /* For centering image if it's smaller than container */
+    align-items: center;
+    justify-content: center;
+    cursor: pointer; /* Indicate clickable for large view */
+}
+
+.product-card img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Show full image, may have letterboxing if aspect ratio differs */
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.product-card-image-container:hover img {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.product-card-info {
+    text-align: left;
+    margin-bottom: 1rem;
+    padding: 0 0.5rem;
+}
+
+.product-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.5rem;
+}
+
+.product-card h3 {
+    font-size: 1.5rem;
+    color: #073B4C;
+    margin: 0;
+    flex-grow: 1;
+    font-weight: bold;
+}
+
+.product-card .heart-btn {
+    background: none;
+    border: none;
+    font-size: 2.2rem;
+    cursor: pointer;
+    color: #EF476F;
+    transition: color 0.2s ease, transform 0.2s ease;
+    padding: 0.2rem;
+    opacity: 0.7;
+}
+
+.product-card .heart-btn:hover {
+    transform: scale(1.2);
+    opacity: 1;
+}
+
+.product-card .heart-btn.active {
+    color: #D6325B;
+    opacity: 1;
+}
+
+.product-card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.product-card .price {
+    font-size: 1.2rem;
+    color: #073B4C;
+    font-weight: bold;
+}
+
+.product-card .energy-beans {
+    font-size: 1.1rem;
+    color: #fff;
+    background-color: #118AB2;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+/* Card Details Section - Memphis */
+.card-details-section {
+    border-top: 3px dashed #FFD166;
+    padding-top: 1rem;
+    margin-top: 1rem;
+}
+
+.card-dimension-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 0.8rem;
+}
+
+.card-dimension-tabs button {
+    background-color: #f0f0f0;
+    color: #073B4C;
+    border: 2px solid #118AB2;
+    padding: 0.5rem 1rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.card-dimension-tabs button:hover {
+    background-color: #FFD166;
+    color: #073B4C;
+}
+
+.card-dimension-tabs button.active {
+    background-color: #073B4C;
+    color: #FFD166;
+    border-color: #FFD166;
+}
+
+.card-dimension-content {
+    font-size: 0.95rem;
+    color: #333;
+    padding: 0.8rem;
+    min-height: 40px;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    background-color: #fff;
+    border: 2px dotted #06D6A0;
+    border-radius: 4px;
+}
+
+.card-reviews-tags {
+    margin-top: 0.5rem;
+}
+
+.card-reviews-tags .tag {
+    display: inline-block;
+    background-color: #EF476F;
+    color: white;
+    padding: 0.4rem 0.9rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    border: 2px solid #073B4C;
+}
+
+/* Modal Base Styles (used by Wishlist and Image Viewer) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Enable scroll if content is too long */
+    background-color: rgba(0,0,0,0.7); /* Darker overlay */
+}
+
+/* Wishlist Modal - Memphis */
+#wishlist-modal .modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 30px;
+    width: 90%;
+    max-width: 550px;
+    border-radius: 0px;
+    border: 5px solid #073B4C;
+    position: relative;
+    box-shadow: 10px 10px 0px #FFD166;
+}
+
+#wishlist-modal .modal-content h2 {
+    color: #073B4C;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+}
+
+#wishlist-modal .close-btn {
+    color: #073B4C;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 3rem;
+    font-weight: bold;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+#wishlist-modal .close-btn:hover,
+#wishlist-modal .close-btn:focus {
+    color: #EF476F;
+    transform: rotate(90deg);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#wishlist-items .wishlist-item {
+    padding: 1rem 0;
+    border-bottom: 2px dashed #118AB2;
+}
+
+#wishlist-items .wishlist-item:last-child {
+    border-bottom: none;
+}
+
+#wishlist-items .wishlist-item span {
+    color: #073B4C;
+    font-size: 1.1rem;
+}
+
+#wishlist-items .wishlist-item .remove-wishlist-item {
+    background-color: #EF476F;
+    color: white;
+    border: 2px solid #073B4C;
+    padding: 0.4rem 0.8rem;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+#wishlist-items .wishlist-item .remove-wishlist-item:hover {
+    background-color: #D6325B;
+}
+
+#total-energy-beans {
+    font-weight: bold;
+    font-size: 1.4rem;
+    color: #06D6A0;
+}
+
+/* Image Viewer Modal Styles */
+.image-viewer {
+    display: none; /* Hidden by default */
+    justify-content: center;
+    align-items: center;
+}
+
+.image-viewer-content {
+    max-width: 90%;
+    max-height: 90%;
+    display: block;
+    margin: auto;
+    border: 5px solid #FFD166; /* Yellow border for image */
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+}
+
+.close-viewer-btn {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+    z-index: 1001; /* Above the image */
+}
+
+.close-viewer-btn:hover,
+.close-viewer-btn:focus {
+    color: #FFD166; /* Yellow on hover */
+    text-decoration: none;
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    header {
+        padding: 1rem;
+    }
+    header h1 {
+        font-size: 1.5rem;
+    }
+    main {
+        padding: 1rem;
+    }
+    .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 2rem; /* Adjusted gap for smaller screens */
+    }
+    .product-card-image-container {
+        height: 220px; /* Adjusted for smaller cards */
+    }
+    .product-card h3 {
+        font-size: 1.3rem;
+    }
+    #wishlist-modal .modal-content {
+        width: 90%;
+        margin: 15% auto;
+        padding: 20px;
+        box-shadow: 6px 6px 0px #FFD166;
+    }
+}
+
+@media (max-width: 480px) {
+    #energy-bean-filters button {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+    .product-card {
+        padding: 1rem;
+        box-shadow: 6px 6px 0px #06D6A0;
+    }
+    .product-card:hover {
+        box-shadow: 8px 8px 0px #EF476F;
+    }
+    .product-card-image-container {
+        height: 200px; /* Further adjust for single column */
+    }
+    .product-card h3 {
+        font-size: 1.2rem;
+    }
+    .product-card .price,
+    .product-card .energy-beans {
+        font-size: 1rem;
+    }
+    .card-dimension-tabs button {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.8rem;
+    }
+    .card-dimension-content {
+        font-size: 0.9rem;
+    }
+    .card-reviews-tags .tag {
+        font-size: 0.8rem;
+    }
+    .image-viewer-content {
+        max-width: 95%;
+        max-height: 85%;
+    }
+    .close-viewer-btn {
+        top: 15px;
+        right: 25px;
+        font-size: 30px;
+    }
+}
+

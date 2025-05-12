@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>山姆能量豆小卖部</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>山姆能量豆小卖部</h1>
+        <button id="wishlist-btn">心愿单 (<span id="wishlist-count">0</span>)</button>
+    </header>
+
+    <main>
+        <section id="filter-section">
+            <h2>筛选能量豆数量</h2>
+            <div id="energy-bean-filters">
+                <!-- 能量豆筛选按钮将由JS动态生成 -->
+            </div>
+        </section>
+
+        <section id="product-list-section">
+            <h2>商品列表</h2>
+            <div id="product-grid" class="product-grid">
+                <!-- 商品卡片将由JS动态生成 -->
+            </div>
+        </section>
+    </main>
+
+    <!-- 心愿单模态框 -->
+    <div id="wishlist-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>我的心愿单</h2>
+            <div id="wishlist-items">
+                <!-- 心愿单商品将由JS动态生成 -->
+            </div>
+            <p>总需能量豆: <span id="total-energy-beans">0</span></p>
+        </div>
+    </div>
+
+    <!-- 图片查看器模态框 -->
+    <div id="image-viewer-modal" class="modal image-viewer">
+        <span class="close-viewer-btn">&times;</span>
+        <img class="image-viewer-content" id="image-viewer-src" src="" alt="商品大图">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
